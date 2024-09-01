@@ -1,11 +1,8 @@
 import {
-  Avatar,
   Box,
   Button,
   TextField,
   Typography,
-  IconButton,
-  Popover,
   Autocomplete,
   Modal,
 } from "@mui/material";

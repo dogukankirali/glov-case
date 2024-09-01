@@ -2,8 +2,6 @@ import { Box, Button, Typography } from "@mui/material";
 import InputField from "../Components/Common/InputField";
 import { useState } from "react";
 import { useUser } from "../Context/UserContext";
-import { TEMP_USER } from "../Temp/TempUser";
-import Toastify from "../Utils/Toastify";
 import { AuthService } from "../Service/AuthService";
 
 export default function Login() {
