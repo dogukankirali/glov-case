@@ -10,6 +10,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import SendIcon from "@mui/icons-material/Send";
 
 export default function InputField({
+  dataTestId,
   id,
   label,
   value,
@@ -22,6 +23,7 @@ export default function InputField({
   disabled,
   onSend,
 }: {
+  dataTestId?: string;
   id?: string;
   label?: string;
   value: string;
@@ -61,6 +63,7 @@ export default function InputField({
         </Typography>
       )}
       <TextField
+        //data-testid={}
         type={
           type === "password"
             ? showPassword
@@ -110,6 +113,9 @@ export default function InputField({
             },
           }
         }
+        inputProps={{
+          "data-testid": dataTestId,
+        }}
         InputProps={{
           endAdornment:
             type === "password" ? (
@@ -138,6 +144,7 @@ export default function InputField({
               <InputAdornment position="end">
                 <IconButton aria-label="toggle password visibility" edge="end">
                   <SendIcon
+                    data-testid="chat-submit"
                     onClick={onSend}
                     sx={{
                       color: "gray",
