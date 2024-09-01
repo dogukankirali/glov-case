@@ -54,6 +54,7 @@ export default function Login() {
         </Typography>
         <Box sx={{ p: 2, display: "grid", gridTemplateColumns: "1fr", gap: 2 }}>
           <InputField
+            dataTestId="login-username"
             label="Username"
             value={userInfos.username}
             setValue={(e: string) => {
@@ -61,6 +62,7 @@ export default function Login() {
             }}
           />
           <InputField
+            dataTestId="login-password"
             label="Password"
             type="password"
             value={userInfos.password}
@@ -69,6 +71,7 @@ export default function Login() {
             }}
           />
           <Button
+            data-testid="login-submit"
             sx={{
               backgroundColor: "darkblue",
               color: "white",

@@ -108,22 +108,24 @@ export default function Header() {
               alignItems: "center",
             }}
           >
-            <Typography
-              onClick={handleOpenUserMenu}
-              variant="h6"
-              sx={{
-                display: { xs: "none", md: "flex" }, // Sadece md ve üzeri için göster
-                fontFamily: "Roboto",
-                fontSize: 14,
-                lineHeight: "20px",
-                textAlign: "start",
-                color: "#FFFFFF",
-                ml: 1,
-                cursor: "pointer",
-              }}
-            >
-              Welcome, {user.firstName}
-            </Typography>
+            {user && (
+              <Typography
+                onClick={handleOpenUserMenu}
+                variant="h6"
+                sx={{
+                  display: { xs: "none", md: "flex" }, // Sadece md ve üzeri için göster
+                  fontFamily: "Roboto",
+                  fontSize: 14,
+                  lineHeight: "20px",
+                  textAlign: "start",
+                  color: "#FFFFFF",
+                  ml: 1,
+                  cursor: "pointer",
+                }}
+              >
+                Welcome, {user.firstName}
+              </Typography>
+            )}
             {Boolean(anchorElUser) ? (
               <ArrowDropUpIcon
                 sx={{
@@ -219,16 +221,18 @@ export default function Header() {
                         marginRight: 2,
                       }}
                     />
-                    <Typography
-                      sx={{
-                        fontFamily: "Roboto",
-                        fontSize: 16,
-                        fontWeight: 500,
-                        color: "#FFFFFF",
-                      }}
-                    >
-                      {user.firstName} {user.lastName}
-                    </Typography>
+                    {user && (
+                      <Typography
+                        sx={{
+                          fontFamily: "Roboto",
+                          fontSize: 16,
+                          fontWeight: 500,
+                          color: "#FFFFFF",
+                        }}
+                      >
+                        {user.firstName} {user.lastName}
+                      </Typography>
+                    )}
                   </Box>
                 ) : (
                   <Typography

@@ -170,6 +170,7 @@ export default function ChatWindow() {
     >
       <Header />
       <Box
+        data-testid="chat-window"
         sx={{
           backgroundImage: `url(${GreenBackground})`,
           backgroundSize: "cover",
@@ -192,6 +193,7 @@ export default function ChatWindow() {
         >
           {messages.map((message) => (
             <Box
+              data-testid="messages"
               key={message.id}
               className="animate__animated animate__fadeInRightBig"
               sx={{
@@ -264,6 +266,7 @@ export default function ChatWindow() {
           }}
         >
           <InputField
+            data-testid="message-input"
             value={newMessage?.content || ""}
             setValue={handleChange}
             onKeyDown={handleKeyDown}
@@ -315,6 +318,7 @@ export default function ChatWindow() {
           )}
           <TextField
             //disabled
+            data-testid="chat-input"
             sx={{
               width: "300px",
               height: 49,
